@@ -25,34 +25,43 @@
     <title>FROUTZ, AMAP fruits à Toulouse : accueil</title>
   </head>
 
-  <body class="flex flex-col items-center">
+  <body class="flex flex-col items-center" onload="init()">
     <div class="max-w-4xl">
       <div class="flex flex-row justify-center">
         <img src="img/froutzHeaderTop.png" alt="AMAP Froutz à Toulouse : des fruits bio dans vos paniers" />
       </div>
 
       <div class="flex flex-row gap-6 p-2">
-        <nav class="w-0 sm:w-32 h-0 sm:h-screen flex flex-col gap-4">
-          <a href="#rejoindre-l-amap" onclick="updatePage('rejoindre-l-amap')">Rejoindre l'AMAP</a>
-          <a href="#c-est-quoi-l-amap-froutz" onclick="updatePage('c-est-quoi-l-amap-froutz')"
-            >C'est quoi, l'AMAP Froutz&nbsp;?</a
-          >
-          <a href="#ou-et-quand" onclick="updatePage('ou-et-quand')">Lieu et horaires</a>
-          <a href="#fonctionnement-distributions" onclick="updatePage('fonctionnement-distributions')"
-            >Fonctionnement des distributions</a
-          >
-          <a href="#permanences_et_trocs_paniers" onclick="updatePage('permanences_et_trocs_paniers')"
-            >Permanences / troc de paniers</a
-          >
-          <a href="#une-amap-kezako" onclick="updatePage('une-amap-kezako')">Une AMAP, kézako&nbsp;?</a>
-          <a href="#faq" onclick="updatePage('faq')">Foire aux questions</a>
-          <a href="#contact" onclick="updatePage('contact')">Contact</a>
+        <div class="w-0 sm:w-32">
+          <label for="toggleMenuButton" class="sm:hidden"><div class="menuIcon">menu</div></label>
+          <input id="toggleMenuButton" type="checkbox" role="button" class="invisible" />
+          <nav class="h-screen flex flex-col gap-4 overflow-hidden toggleMenu">
+            <button onclick="hideMenu()" class="sm:hidden">&nbsp;</button>
+            <!--              -->
+            <!--     menu     -->
+            <!--              -->
+            <a href="#rejoindre-l-amap" onclick="updatePage('rejoindre-l-amap')">Rejoindre l'AMAP</a>
+            <a href="#c-est-quoi-l-amap-froutz" onclick="updatePage('c-est-quoi-l-amap-froutz')"
+              >C'est quoi, l'AMAP Froutz&nbsp;?</a
+            >
+            <a href="#ou-et-quand" onclick="updatePage('ou-et-quand')">Lieu et horaires</a>
+            <a href="#fonctionnement-distributions" onclick="updatePage('fonctionnement-distributions')"
+              >Distributions</a
+            >
+            <a href="#permanences_et_trocs_paniers" onclick="updatePage('permanences_et_trocs_paniers')"
+              >Permanences / troc de paniers</a
+            >
+            <a href="#une-amap-kezako" onclick="updatePage('une-amap-kezako')">Une AMAP, kézako&nbsp;?</a>
+            <a href="#faq" onclick="updatePage('faq')">Foire aux questions</a>
+            <a href="#contact" onclick="updatePage('contact')">Contact</a>
 
-          <!-- left menu -->
-          <a href="#" onclick="updatePage('accueil')">Accueil</a>
+            <a href="#" onclick="updatePage('accueil')">Accueil</a>
 
-          <span class="labelMenu">L'amap FROUTZ</span>
-        </nav>
+            <!--          -->
+            <!--          -->
+            <!--          -->
+          </nav>
+        </div>
 
         <div class="flex-grow flex flex-col gap-2">
           <div style="color: green">L'AMAP Froutz, des paniers de fruits bio à Toulouse&nbsp;!</div>
@@ -72,17 +81,22 @@
       </div>
     </div>
   </body>
+
   <script>
+    function hideMenu() {
+      $("#toggleMenuButton").prop("checked", false);
+    }
+
+    // met à jour le contenu de la partie principale quand on clique sur un lien
     function updatePage(page) {
       console.log("page", page);
       $("#currentPage").load(`pages/${page}.html`);
+      hideMenu();
     }
 
     function init() {
       const hash = window.location.hash.substr(1) || "accueil";
       $("#currentPage").load(`pages/${hash}.html`);
     }
-
-    init();
   </script>
 </html>
