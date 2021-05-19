@@ -1,14 +1,93 @@
-    <h1>Contact</h1>
+<h1>Contact</h1>
 
-    <p>Pour toute question relative aux adhésions ou au fonctionnement de l'AMAP, vous pouvez lire les différentes pages de ce site.
-      Vous pouvez également envoyer un courrier électronique aux membres du comité de pilotage&nbsp;: <script type="text/javascript">
-<!--
-var blob=new Array(7, 4, 55, 59, 0, 10, 50, 35, 39, 20, 24, 15, 6, 38, 3, 26, 22, 36, 54, 41, 56, 60, 52, 27, 12, 21, 9, 47, 42, 14, 28, 43, 18, 8, 37, 66, 33, 45, 30, 11, 2, 1, 19, 25, 17, 46, 5, 53, 65, 29, 44, 34, 16, 48, 23, 31, 61, 49, 62, 40, 51, 64, 58, 63, 13, 32, 57, 67);
-var snort='ra>oafl<ize"u<@i3pammta@aa:ogumg/cz=mlt"lp1mto.31af.rra .aohfmimco.>';
-gnagnagna(snort,blob);
-//-->
-</script>
-<noscript>Merci d'activer javascript dans votre navigateur pour afficher l'adresse email du comité de pilotage de l'AMAP.</noscript>
+<p>
+  Pour toute question relative aux adhésions ou au fonctionnement de l'AMAP, vous pouvez lire les différentes pages de
+  ce site. Vous pouvez également envoyer un courrier électronique aux membres du comité de pilotage&nbsp;:
+  <div id="email"></div>
+  <script type="text/javascript">
+    function gnagnagna(str, indices) {
+      let result = "";
+      for (let i = 0; i < indices.length; i++) {
+        result += str.charAt(indices[i]);
+      }
+      document.getElementById("email").innerHTML = result
+    }
+
+    const blob = new Array(
+      7,
+      4,
+      55,
+      59,
+      0,
+      10,
+      50,
+      35,
+      39,
+      20,
+      24,
+      15,
+      6,
+      38,
+      3,
+      26,
+      22,
+      36,
+      54,
+      41,
+      56,
+      60,
+      52,
+      27,
+      12,
+      21,
+      9,
+      47,
+      42,
+      14,
+      28,
+      43,
+      18,
+      8,
+      37,
+      66,
+      33,
+      45,
+      30,
+      11,
+      2,
+      1,
+      19,
+      25,
+      17,
+      46,
+      5,
+      53,
+      65,
+      29,
+      44,
+      34,
+      16,
+      48,
+      23,
+      31,
+      61,
+      49,
+      62,
+      40,
+      51,
+      64,
+      58,
+      63,
+      13,
+      32,
+      57,
+      67
+    );
+    var snort = 'ra>oafl<ize"u<@i3pammta@aa:ogumg/cz=mlt"lp1mto.31af.rra .aohfmimco.>';
+    gnagnagna(snort, blob);
+  </script>
+  <noscript
+    >Merci d'activer javascript dans votre navigateur pour afficher l'adresse email du comité de pilotage de
+    l'AMAP.</noscript
+  >
 </p>
-
-<!--#include virtual="/inc/footer.html"-->
