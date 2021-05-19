@@ -1,0 +1,9 @@
+h4 {
+  margin: 1rem 0 0.5rem 0 !important;
+
+  border-bottom: 1px solid darkgrey;
+}
+h5 + div {
+  margin-bottom: 0.5rem !important;
+  padding-left: 1rem;
+}

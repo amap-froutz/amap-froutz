@@ -1,26 +1,21 @@
-<link
-  href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-  rel="stylesheet"
-/>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 <header>
   <nav class="flex flex-col gap-4">
-    <a href="rejoindre-l-amap.html">Rejoindre l'AMAP</a>
-    <a href="c-est-quoi-l-amap-froutz.html">C'est quoi, l'AMAP Froutz&nbsp;?</a>
-    <a href="ou-et-quand.html">Lieu et horaires</a>
-    <a href="fonctionnement-distributions.html"
-      >Fonctionnement des distributions</a
-    >
-    <a href="permanences_et_trocs_paniers.html"
-      >Permanences / troc de paniers</a
-    >
-    <a href="une-amap-kezako.html">Une AMAP, kézako&nbsp;?</a>
-    <a href="faq.html">Foire aux questions</a>
-    <a href="contact.html">Contact</a>
+    <a href="#" onclick="document.parentElement.getElementById('currentPage').innerHtml='prout'">Rejoindre l'AMAP</a>
+    <a href="pages/c-est-quoi-l-amap-froutz.html" target="_parent">C'est quoi, l'AMAP Froutz&nbsp;?</a>
+    <a href="pages/ou-et-quand.html" target="_parent">Lieu et horaires</a>
+    <a href="pages/fonctionnement-distributions.html" target="_parent">Fonctionnement des distributions</a>
+    <a href="pages/permanences_et_trocs_paniers.html" target="_parent">Permanences / troc de paniers</a>
+    <a href="pages/une-amap-kezako.html" target="_parent">Une AMAP, kézako&nbsp;?</a>
+    <a href="faq.html" target="_parent">Foire aux questions</a>
+    <a href="pages/contact.html" target="_parent">Contact</a>
   </nav>
 
   <!-- left menu -->
-  <a href="/" class="labelMenu">Accueil</a><br />
+  <a href="/" class="labelMenu" target="_parent">Accueil</a><br />
 
   <span class="labelMenu">L'amap FROUTZ</span>
   <ul class="leftMenu"></ul>
 </header>
+
+<script></script>

@@ -1,175 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr" prefix="og: http://ogp.me/ns#">
-<head>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="robots" content="index,follow" />
     <meta name="author" content="AMAP Froutz" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/froutzHeaderTop.png" />
     <meta property="og:site_name" content="FROUTZ - AMAP fruits à Toulouse" />
     <meta property="og:url" content="https://amap-froutz-toulouse.000webhostapp.com/" />
-    <meta property="og:description" content="Amap Froutz à Toulouse : des fruits bio dans vos paniers en vente directe du producteur, quartier Saint Cyprien/Fer à Cheval/Croix de Pierre" />
+    <meta
+      property="og:description"
+      content="Amap Froutz à Toulouse : des fruits bio dans vos paniers en vente directe du producteur, quartier Saint Cyprien/Fer à Cheval/Croix de Pierre"
+    />
     <meta property="og:title" content="FROUTZ, AMAP fruits à Toulouse" />
-    <meta name="description" content="Amap Froutz à Toulouse : des fruits bio dans vos paniers en vente directe du producteur, quartier Saint Cyprien/Fer à Cheval/Croix de Pierre" />
-
+    <meta
+      name="description"
+      content="Amap Froutz à Toulouse : des fruits bio dans vos paniers en vente directe du producteur, quartier Saint Cyprien/Fer à Cheval/Croix de Pierre"
+    />
     <title>FROUTZ, AMAP fruits à Toulouse : accueil</title>
+  </head>
 
+  <body class="flex flex-col items-center">
+    <div class="max-w-4xl">
+      <div class="flex flex-row justify-center">
+        <img src="img/froutzHeaderTop.png" alt="AMAP Froutz à Toulouse : des fruits bio dans vos paniers" />
+      </div>
 
-</head>
-<body class="flex flex-col items-center">
-<div class="max-w-4xl">
+      <div class="flex flex-row gap-6 p-2">
+        <nav class="w-0 sm:w-32 h-0 sm:h-screen flex flex-col gap-4">
+          <a href="#rejoindre-l-amap" onclick="updatePage('rejoindre-l-amap')">Rejoindre l'AMAP</a>
+          <a href="#c-est-quoi-l-amap-froutz" onclick="updatePage('c-est-quoi-l-amap-froutz')"
+            >C'est quoi, l'AMAP Froutz&nbsp;?</a
+          >
+          <a href="#ou-et-quand" onclick="updatePage('ou-et-quand')">Lieu et horaires</a>
+          <a href="#fonctionnement-distributions" onclick="updatePage('fonctionnement-distributions')"
+            >Fonctionnement des distributions</a
+          >
+          <a href="#permanences_et_trocs_paniers" onclick="updatePage('permanences_et_trocs_paniers')"
+            >Permanences / troc de paniers</a
+          >
+          <a href="#une-amap-kezako" onclick="updatePage('une-amap-kezako')">Une AMAP, kézako&nbsp;?</a>
+          <a href="#faq" onclick="updatePage('faq')">Foire aux questions</a>
+          <a href="#contact" onclick="updatePage('contact')">Contact</a>
 
-<div class="flex flex-row justify-center " >
-    <img src="img/froutzHeaderTop.png" alt="AMAP Froutz à Toulouse : des fruits bio dans vos paniers"/>
-</div>
+          <!-- left menu -->
+          <a href="#" onclick="updatePage('accueil')">Accueil</a>
 
-<div class="flex flex-row gap-6 p-2">
-    <object data="menu.html" class="w-0 sm:w-32 h-0 sm:h-screen" ></object>
+          <span class="labelMenu">L'amap FROUTZ</span>
+        </nav>
 
-    <div class="flex-grow flex flex-col gap-2">
+        <div class="flex-grow flex flex-col gap-2">
+          <div style="color: green">L'AMAP Froutz, des paniers de fruits bio à Toulouse&nbsp;!</div>
+          <!--          <div class="labelMenu">Sites amis</div>-->
+          <!--          <ul class="leftMenu">-->
+          <!--            <li><a href="https://amapreseau-mp.org/" target="_blank">Réseau des AMAP de Midi-Pyrénées</a></li>-->
+          <!--            <li>-->
+          <!--              <a href="http://amapfroutz.over-blog.com/2015/03/amap-oeufs-et-poulets.html" target="_blank"-->
+          <!--                >AMAP Bruyère (poulets et oeufs)</a-->
+          <!--              >-->
+          <!--            </li>-->
+          <!--            <li><a href="http://amap-cassolebres.blogspot.com/" target="_blank">AMAP Casso Lebres (légumes)</a></li>-->
+          <!--          </ul>-->
 
-            <div style="color:green; ">L'AMAP Froutz, des paniers de fruits bio à Toulouse&nbsp;!</div>
+          <div id="currentPage" class="flex-grow"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function updatePage(page) {
+      console.log("page", page);
+      $("#currentPage").load(`pages/${page}.html`);
+    }
 
+    function init() {
+      const hash = window.location.hash.substr(1) || "accueil";
+      $("#currentPage").load(`pages/${hash}.html`);
+    }
 
-
-            <div class="labelMenu">Sites amis</div>
-            <ul class="leftMenu">
-                <li><a href="https://amapreseau-mp.org/" target="_blank">Réseau des AMAP de Midi-Pyrénées</a></li>
-                <li><a href="http://amapfroutz.over-blog.com/2015/03/amap-oeufs-et-poulets.html" target="_blank">AMAP Bruyère (poulets et oeufs)</a></li>
-                <li><a href="http://amap-cassolebres.blogspot.com/" target="_blank">AMAP Casso Lebres (légumes)</a></li>
-            </ul>
-
-            <br/>
-            <a class="zoneCopil" href="/COPIL/" title="Zone réservée au Copil">[&nbsp;zone copil&nbsp;]</a>
-            <!-- end left menu -->
-        </td>
-        <td style="vertical-align: top; width:750px; display: inline-block;">
-            <!-- page content -->
-
-
-            <p class="bold center">Actualités Froutz 2021</p>
-
-
-            <hr class="actu"/>
-            <span class="dateActu">dimanche 17 janvier</span><br/>
-            Suite à l’annonce du couvre-feu à 18h, la prochaine distribution aura lieu ce dimanche 17 janvier entre 16h15 et 17h45.
-            <br/>
-            <br/>
-            <hr class="actu"/>
-            <hr class="actu"/>
-
-
-            <p class="bold center">Actualités Froutz 2020</p>
-
-            <!--
-            <hr class="actu"/>
-
-            <p class="bold center">Renouvellement des adhésions&nbsp;: n'attendez plus, c'est maintenant&nbsp;!</p>
-            <p>La première distribution de fruits de la saison 2020-2021 aura lieu le 20 juillet (date à confirmer).
-              <b>Il reste encore des paniers à pourvoir</b>, c'est le moment d'<a href="rejoindre-l-amap.html" title="Rejoindre l'AMAP Froutz">adhérer</a>.<br/>
-              &Agrave; noter&nbsp;: l'adhésion se fait avant la première livraison de fruits. <a href="contact.html" title="Contactez l'amap Froutz">Contactez-nous&nbsp;!</a></p>
-              <p><b>Dans les paniers</b> au fil de la saison à venir (selon récolte)&nbsp;:
-                pêches, nectarines, abricots, prunes, figues, raisins, pommes, kiwis, kakis, et aussi&nbsp;: jus et pétillant de pommes, gelée de pommes, vinaigre.</p>
-              <p>Parlez-en autour de vous&nbsp;: [&nbsp;<a href="img/flyerA6.pdf">Flyer</a>&nbsp;]</p>
-            <hr class="actu"/>
-            -->
-
-
-            <hr class="actu"/>
-            <span class="dateActu">mardi 3 novembre</span><br/>
-            Compte tenu des décisions nationales liées à la pandémie de Covid, la visite a la ferme est annulée. Elle sera reportée.
-            <br/>
-
-            <hr class="actu"/>
-            <span class="dateActu">Samedi 21 novembre</span><br/>
-            Visite à la ferme : avec au programme visite du verger, cueillette de pommes, dégustation de pizzas de Jean et du vin de Joëlle Gaveaux (dans le respect des règles de prévention de l'épidémie).<br/>
-            <br/>
-
-            <hr class="actu"/>
-            <span class="dateActu">Lundi 20 juillet</span><br/>
-            Première distribution de la saison. L'AMAP a fait le plein d'adhérents, merci à vous&nbsp;!<br/>
-
-            <hr class="actu"/>
-            <span class="dateActu">Lundi 23 mars</span><br/>
-            Distribution maintenue&nbsp;: les détails des conditions particulières de distribution ont été envoyées par mail.
-            Si vous avez des questions, n'hésitez pas à contacter le copil.<br/>
-            <br/>
-            La visite du 28 mars est bien-sûr reportée.<br/>
-            <hr class="actu"/>
-
-            <span class="dateActu">Lundi 9 mars à 20h, après la distribution</span><br/>
-            Assemblée générale à la maison de la citoyenneté Rive Gauche (Saint-Cyprien), salle 1<br/>
-            20, place Jean-Diebold<br/>
-            Métro ligne A, arrêt Saint-Cyprien République<br/>
-            Pour l'occasion, <b>fin de la distribution à 19h45.</b>
-            <hr class="actu"/>
-
-            <span class="dateActu">Lundi 13 janvier</span><br/>
-            Première distribution de l'année. Au programme&nbsp;: vin chaud&nbsp;!
-
-            <br/>
-            <br/>
-
-            <hr class="actu"/>
-            <hr class="actu"/>
-
-
-            <p class="bold center">Actualités Froutz 2019</p>
-
-
-            <hr class="actu"/>
-            <!--
-            <p class="bold center">Renouvellement des adhésions&nbsp;: vite, c'est maintenant&nbsp;!</p>
-            <p>La saison 2018-2019 a pris fin le 15 avril. La première distribution de fruits de la prochaine saison aura lieu le 15 juillet.
-              <b>Il reste encore des paniers à pourvoir</b>, c'est le moment d'<a href="rejoindre-l-amap.html" title="Rejoindre l'AMAP Froutz">adhérer ou de renouveler les adhésions</a>.<br/>
-              Note pour les futurs amapiens&nbsp;: l'adhésion se fait avant la première livraison de fruits. <a href="contact.html" title="Contactez l'amap Froutz">Contactez-nous&nbsp;!</a></p>
-              <p><b>Dans la paniers</b> au fil de la saison à venir (selon récolte)&nbsp;:
-              pêches, nectarines, abricots, prunes, figues, raisins, pommes, kiwis, kakis, et aussi&nbsp;: jus et pétillant de pommes, gelée de pommes, vinaigre.</p>
-            <hr class="actu"/>
-            -->
-
-            <span class="dateActu">Lundi 13 décembre</span><br/>
-            Attention, double distribution&nbsp;! Prenez vos sacs, cagettes, cabas... et vos bras&nbsp;!<br/>
-            Pas de distribution le 30/12, distribution suivante le 13 janvier.<br/>
-            Deux dates à noter&nbsp;:
-            <ul>
-                <li>9 mars&nbsp;: AG Froutz</li>
-                <li>28 mars&nbsp;: visite chez Jean</li>
-            </ul>
-            <hr class="actu"/>
-
-            <span class="dateActu">Lundi 18 novembre</span><br/>
-            Du vinaigre dans vos paniers&nbsp;: pensez à apporter une bouteille... vide.<br/>
-            <hr class="actu"/>
-
-            <span class="dateActu">Lundi 15 juillet</span><br/>
-            Première distribution de la saison&nbsp;!<br/>
-            <hr class="actu"/>
-
-            <span class="dateActu">Dimanche 23 juin</span><br/>
-            Le Framacalc pour les dates de permanence et les trocs de paniers est prêt.
-            Lire le petit guide <i><a href="permanences_et_trocs_paniers.html">comment s'inscrire à une date de permanence et comment proposer un échange de panier</a></i>.
-            <br/>
-            <hr class="actu"/>
-
-            <span class="dateActu">Lundi 15 avril</span><br/>
-            Dernière distribution de fruits de la saison (le copil sera là pour récolter les contrats&nbsp;!) et, en plus de vos paniers... dégustation de pain&nbsp;!<br/>
-            <hr class="actu"/>
-
-            <span class="dateActu">Lundi 18 mars</span><br/>
-            N'oubliez pas l'AG, lundi 18 mars au 2, rue Lafage, à Toulouse&nbsp;!<br/>
-
-
-
-</div>
-</div>
-
-</div>
-
-</body>
+    init();
+  </script>
 </html>
-
-
