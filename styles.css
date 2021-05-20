@@ -45,3 +45,7 @@ h2 {
 li {
   padding-bottom: var(--gap);
 }
+
+a {
+  text-decoration: underline;
+}
