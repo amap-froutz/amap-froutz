@@ -1,10 +1,15 @@
-h4 {
-  margin: 1rem 0 0.5rem 0 !important;
+body {
+  --gap: 0.5rem;
+  --accent-color: darkorange;
+}
+
+h2 {
+  margin: 1rem 0 var(--gap) 0 !important;
 
   border-bottom: 1px solid darkgrey;
 }
-h5 + div {
-  margin-bottom: 0.5rem !important;
+h3 + div {
+  margin-bottom: var(--gap) !important;
   padding-left: 1rem;
 }
 
@@ -30,4 +35,13 @@ input:checked + nav.toggleMenu {
   top: 0;
   left: 0;
   z-index: 2;
+}
+
+h1,
+h2 {
+  color: var(--accent-color);
+}
+
+li {
+  padding-bottom: var(--gap);
 }
