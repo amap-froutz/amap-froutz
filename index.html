@@ -40,22 +40,16 @@
             <!--              -->
             <!--     menu     -->
             <!--              -->
-            <a href="#rejoindre-l-amap" onclick="updatePage('rejoindre-l-amap')">Rejoindre l'AMAP</a>
-            <a href="#c-est-quoi-l-amap-froutz" onclick="updatePage('c-est-quoi-l-amap-froutz')"
-              >C'est quoi, l'AMAP Froutz&nbsp;?</a
-            >
-            <a href="#ou-et-quand" onclick="updatePage('ou-et-quand')">Lieu et horaires</a>
-            <a href="#fonctionnement-distributions" onclick="updatePage('fonctionnement-distributions')"
-              >Distributions</a
-            >
-            <a href="#permanences_et_trocs_paniers" onclick="updatePage('permanences_et_trocs_paniers')"
-              >Permanences / troc de paniers</a
-            >
-            <a href="#une-amap-kezako" onclick="updatePage('une-amap-kezako')">Une AMAP, kézako&nbsp;?</a>
-            <a href="#faq" onclick="updatePage('faq')">Foire aux questions</a>
-            <a href="#contact" onclick="updatePage('contact')">Contact</a>
+            <a href="#rejoindre-l-amap">Rejoindre l'AMAP</a>
+            <a href="#c-est-quoi-l-amap-froutz">C'est quoi, l'AMAP Froutz&nbsp;?</a>
+            <a href="#ou-et-quand">Lieu et horaires</a>
+            <a href="#fonctionnement-distributions">Distributions</a>
+            <a href="#permanences_et_trocs_paniers">Permanences / troc de paniers</a>
+            <a href="#une-amap-kezako">Une AMAP, kézako&nbsp;?</a>
+            <a href="#faq">Foire aux questions</a>
+            <a href="#contact">Contact</a>
 
-            <a href="#" onclick="updatePage('accueil')">Accueil</a>
+            <a href="#">Accueil</a>
 
             <!--          -->
             <!--          -->
@@ -87,16 +81,16 @@
       $("#toggleMenuButton").prop("checked", false);
     }
 
-    // met à jour le contenu de la partie principale quand on clique sur un lien
-    function updatePage(page) {
-      console.log("page", page);
-      $("#currentPage").load(`pages/${page}.html`);
-      hideMenu();
-    }
-
     function init() {
       const hash = window.location.hash.substr(1) || "accueil";
       $("#currentPage").load(`pages/${hash}.html`);
+
+      window.addEventListener("hashchange", function () {
+        // met à jour le contenu de la partie principale quand l'adresse change (ce qui suit le dièse)
+        const hash = window.location.hash.substr(1) || "accueil";
+        $("#currentPage").load(`pages/${hash}.html`);
+        hideMenu();
+      });
     }
   </script>
 </html>
