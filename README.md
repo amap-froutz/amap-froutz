@@ -1,5 +1,8 @@
 # amap-froutz
 
+# pour tester sur son ordinateur
+- 
+
 ## Pour modifier une page
 - aller dans pages
 - cliquez sur la page que vous voulez modifier
