@@ -1,7 +1,6 @@
 body {
   --gap: 0.5rem;
   --accent-color: darkorange;
-  text-align: justify;
 }
 
 h1 {
@@ -17,6 +16,10 @@ h2 {
 h3 + div {
   margin-bottom: var(--gap) !important;
   padding-left: 1rem;
+}
+
+p {
+  text-align: justify;
 }
 
 input:checked + nav.toggleMenu {
