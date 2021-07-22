@@ -3,6 +3,11 @@ body {
   --accent-color: darkorange;
 }
 
+h1 {
+  margin: 1rem 0 var(--gap) 0 !important;
+
+  font-weight: bold;
+}
 h2 {
   margin: 1rem 0 var(--gap) 0 !important;
 
