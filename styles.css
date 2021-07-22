@@ -1,6 +1,7 @@
 body {
   --gap: 0.5rem;
   --accent-color: darkorange;
+  text-align: justify;
 }
 
 h1 {
@@ -54,3 +55,4 @@ li {
 a {
   text-decoration: underline;
 }
+
